@@ -10,7 +10,7 @@
 <body>
     <!-- footer part -->
 
-    <footer class="footer footer-center bg-base-300 text-base-content p-4">
+    <footer class="footer footer-center bg-base-300 text-base-content p-4 mt-2">
         <aside>
             <p>Copyright © All right reserved by Apurbo Saha</p>
         </aside>

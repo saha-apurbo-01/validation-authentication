@@ -112,7 +112,7 @@
             <strong><?= $_SESSION['gender_err'] ?></strong>
           <?php }
           unset($_SESSION['gender_err']) ?>
-          <div class="form-control mt-6">
+          <div class="form-control mt-1">
             <button class="btn btn-primary">Register</button>
           </div>
           <label class="label">

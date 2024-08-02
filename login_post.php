@@ -42,7 +42,7 @@ if($flag){
 }
 
 else{
-    $_SESSION['logged_in']= "ami login korechi";
+    $_SESSION['logged_in']= "I am logged in";
     header('location: dashboard.php');
 }
 ?>

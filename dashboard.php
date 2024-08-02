@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['logged_in'])) {
-    header('location: login.php');
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,11 +10,16 @@ if (!isset($_SESSION['logged_in'])) {
     <title>Document</title>
 </head>
 
-<body>
+<body class="">
 
-    <?php require 'includes/header.php'?>
+    <?php require 'header.php'?>
 
-    <?php require 'includes/footer.php' ?>
+    <div class="card mt-2">
+        <div class="card-body ">
+            <h1 class="bg-slate-300 font-blod text-xl p-2 rounded">Welcome to admin panel</h1>
+        </div>
+    </div>
+    <?php require 'footer.php' ?>
     
 </body>
 
