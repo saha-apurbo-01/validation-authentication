@@ -23,9 +23,10 @@
 
         <form method="post" action="register_post.php" class="card-body">
 
-          <?php if(isset($_SESSION['success'])){?>
+          <?php if (isset($_SESSION['success'])) { ?>
             <div class="alert alert-success"><?= $_SESSION['success'] ?></div>
-            <?php } unset($_SESSION['success']) ?>
+          <?php }
+          unset($_SESSION['success']) ?>
 
           <div class="form-control">
             <?php
@@ -72,52 +73,57 @@
 
           </div>
           <?php
-            if (isset($_SESSION['country'])) {
-              $country = $_SESSION['country'];
-            } else {
-              $country = ' ';
-            }
-            ?>
+          if (isset($_SESSION['country'])) {
+            $country = $_SESSION['country'];
+          } else {
+            $country = ' ';
+          }
+          ?>
           <select class="select select-info w-full max-w-xs" name="country">
-          <option disabled selected>Select Country</option>
-            <option value="BAN" <?= ($country == "BAN" ? "selected": "")?>>BAN</option>
-            <option value="USA" <?= ($country == "USA" ? "selected": "")?>>USA</option>
-            <option value="UK" <?=  ($country == "UK" ? "selected" : "")?>>UK</option>
+            <option disabled selected>Select Country</option>
+            <option value="BAN" <?= ($country == "BAN" ? "selected" : "") ?>>BAN</option>
+            <option value="USA" <?= ($country == "USA" ? "selected" : "") ?>>USA</option>
+            <option value="UK" <?= ($country == "UK" ? "selected" : "") ?>>UK</option>
           </select>
           <?php
-          if (isset($_SESSION['country_err'])){ ?>
-          <strong><?= $_SESSION['country_err']?></strong>
-          <?php } unset($_SESSION['country_err']) ?>
+          if (isset($_SESSION['country_err'])) { ?>
+            <strong><?= $_SESSION['country_err'] ?></strong>
+          <?php }
+          unset($_SESSION['country_err']) ?>
 
           <?php
-            if (isset($_SESSION['gender'])) {
-              $gender = $_SESSION['gender'];
-            } else {
-              $gender = ' ';
-            }
-            ?>
-          <div class="flex flex-col gap-2">
-          <div class="flex flex-row gap-2">
-          <input type="radio" name="radio" class="radio" value="male" <?=($gender == "male"? "checked": "") ?> />
-          <h1>Male</h1>
+          if (isset($_SESSION['gender'])) {
+            $gender = $_SESSION['gender'];
+          } else {
+            $gender = ' ';
+          }
+          ?>
+          <div class="flex flex-row gap-4">
+            <div class="flex flex-row gap-2">
+              <input type="radio" name="radio" class="radio" value="male" <?= ($gender == "male" ? "checked" : "") ?> />
+              <h1>Male</h1>
+            </div>
+            <div class="flex flex-row gap-2">
+              <input type="radio" name="radio" class="radio" value="female" <?= ($gender == "female" ? "checked" : "") ?> />
+              <h1>Female</h1>
+            </div>
           </div>
-          <div class="flex flex-row gap-2">
-          <input type="radio" name="radio" class="radio" value="female" <?=($gender == "female"? "checked": "") ?> />
-          <h1>Female</h1>
-          </div>
-          </div>
-          <?php if(isset($_SESSION['gender_err'])) {?>
+          <?php if (isset($_SESSION['gender_err'])) { ?>
             <strong><?= $_SESSION['gender_err'] ?></strong>
-            <?php } unset($_SESSION['gender_err'])?>
+          <?php }
+          unset($_SESSION['gender_err']) ?>
           <div class="form-control mt-6">
             <button class="btn btn-primary">Register</button>
           </div>
+          <label class="label">
+            <a href="login.php" class="label-text-alt link link-hover">Login Here</a>
+          </label>
         </form>
       </div>
     </div>
   </div>
 
-  
+
 </body>
 
 </html>

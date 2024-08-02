@@ -42,6 +42,7 @@ if($flag){
 }
 
 else{
+    $_SESSION['logged_in']= "ami login korechi";
     header('location: dashboard.php');
 }
 ?>
