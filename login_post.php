@@ -43,6 +43,7 @@ if($flag){
 
 else{
     $_SESSION['logged_in']= "I am logged in";
+    $_SESSION['logged_id']= $after_assoc['Id']; 
     header('location: dashboard.php');
 }
 ?>
