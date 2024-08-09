@@ -13,6 +13,6 @@ $update = "UPDATE users SET Email='$email',Country='$country',Gender='$gender' W
 mysqli_query($db_connection, $update);
 
 
-$_SESSION['updated']= "Info Updated successfully!!";
+$_SESSION['updated']= "Info Updated Successfully!!";
 header('location: profile.php');
 ?>

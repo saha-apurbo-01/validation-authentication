@@ -16,7 +16,7 @@ if (empty($cpassword)) {
     $after_assoc = mysqli_fetch_assoc($select_res);
     if (!password_verify($cpassword, $after_assoc['Password'])) {
         $flag = true;
-        $_SESSION['cpass_err'] = "wrong pass";
+        $_SESSION['cpass_err'] = "wrong password";
     }
 }
 

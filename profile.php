@@ -22,10 +22,7 @@
         unset($_SESSION['updated']) ?>
         <h2 class="card-title bg-gray-400 rounded p-2">Edit Profile Info</h2>
         <div class="form-control">
-          <label class="label">
-            <span class="label-text">Id</span>
-          </label>
-          <input type="text" name="user_id" class="input input-bordered mb-2" value="<?= $after_assoc_logged['Id'] ?>" />
+          <input type="hidden" name="user_id" class="input input-bordered mb-2" value="<?= $after_assoc_logged['Id'] ?>" />
           <label class="label">
             <span class="label-text">Email</span>
           </label>
@@ -66,10 +63,7 @@
       unset($_SESSION['pass_updated']) ?>
       <h2 class="card-title bg-gray-400 rounded p-2">Update Password</h2>
       <div class="form-control">
-        <label class="label">
-          <span class="label-text">Id</span>
-        </label>
-        <input type="text" name="user_id" class="input input-bordered mb-2" value="<?= $after_assoc_logged['Id'] ?>" />
+        <input type="hidden" name="user_id" class="input input-bordered mb-2" value="<?= $after_assoc_logged['Id'] ?>" />
         <label class="label">
           <span class="label-text">Current Password</span>
         </label>
@@ -119,15 +113,25 @@
   </div>
   <!-- update photo -->
   <div class="card bg-base-100 w-96 shadow-xl m-4">
-    <div class="card-body ">
+    <form method="post" action="photo_update.php" class="card-body " enctype="multipart/form-data">
+      <?php if(isset($_SESSION['photo_update'])) {?>
+        <div class="alert alert-success"><?= $_SESSION['photo_update']?></div>
+        <?php } unset($_SESSION['photo_update'])?>
       <h2 class="card-title bg-gray-400 rounded p-2">Update Photo</h2>
+      <input type="hidden" name="user_id" class="input input-bordered mb-2" value="<?= $after_assoc_logged['Id'] ?>" />
+      <input type="file" name="photo" class="file-input file-input-bordered w-full max-w-xs" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" />
 
-      <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
-
+      <?php if (isset($_SESSION['err'])) { ?>
+        <strong><?= $_SESSION['err'] ?></strong>
+      <?php }
+      unset($_SESSION['err']) ?>
+      <div class="mt-2">
+        <img src="/RegisterPage/uploads/<?= $after_assoc_logged['Photo'] ?>" id="blah" width="200" alt="">
+      </div>
       <div class="form-control mt-1">
         <button class="btn btn-neutral">Update</button>
-      </div>
-    </div>
+    </form>
+  </div>
   </div>
   </div>
   <?php require 'footer.php' ?>
