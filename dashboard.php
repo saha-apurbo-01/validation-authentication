@@ -19,6 +19,10 @@
             <h1 class="bg-slate-300 font-blod text-xl p-2 rounded">Welcome to admin panel</h1>
         </div>
     </div>
+    
+    <div class="h-10 w-16 mx-8 rounded-lg bg-green-400">
+        <a href="users_list.php" class="flex justify-center items-center p-2 link link-hover">Users</a>
+    </div>
     <?php require 'footer.php' ?>
     
 </body>

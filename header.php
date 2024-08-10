@@ -26,12 +26,12 @@ $after_assoc_logged = mysqli_fetch_assoc($select_logged_user_res);
     <!-- navbar part -->
     <div class="navbar bg-base-300">
         <div class="flex-1">
-            <a class="btn btn-ghost text-xl">DashBoard</a>
+            <a class="btn btn-ghost text-xl">Admin Panel</a>
         </div>
         <div class="flex-none">
             <ul class="menu menu-horizontal px-1">
-                <li><a>Notification</a></li>
-                <li><a href="profile.php">Profile</a></li>
+                <li><a class="label-text-alt link link-hover">Notification</a></li>
+                <li><a class="label-text-alt link link-hover" href="profile.php">Profile</a></li>
                 
 
             </ul>
