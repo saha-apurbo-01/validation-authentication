@@ -28,7 +28,9 @@
                     <td class="p-2">Email</td>
                     <td class="p-2">Country</td>
                     <td class="p-2">Gender</td>
+                    <?php if($after_assoc_logged['Role'] == 1){?>
                     <td class="p-2">Action</td>
+                    <?php }?>
                 </tr>
 
                 <?php foreach ($user_res as $index => $user) { ?>
@@ -37,22 +39,30 @@
                         <td class="p-2"><?= $user['Email'] ?></td>
                         <td class="p-2"><?= $user['Country'] ?></td>
                         <td class="p-2"><?= $user['Gender'] ?></td>
+                        <?php if($after_assoc_logged['Role'] == 1) {?>
                         <td class="p-2"><a href="user_delete.php?Id=<?= $user['Id'] ?>" title="Delete User"><i class="fa-solid fa-delete-left"></i></a></td>
+                        <?php }?>
                     </tr>
                 <?php } ?>
             </table>
 
         </div>
-        <div class="card card-body ">
+        <?php if($after_assoc_logged['Role'] == 1) {?>
+
+       <form method="post" action="role.php">
+       <div class="card card-body ">
+        <?php if(isset($_SESSION['role_update'])){?>
+            <strong class="alert alert-success"><?= $_SESSION['role_update']?></strong>
+            <?php } unset($_SESSION['role_update'])?>
             <h2 class="bg-slate-300 rounded-sm p-2">Assign Role</h2>
-            <select class="select select-bordered w-full max-w-xs">
+            <select name="user_id" class="select select-bordered w-full max-w-xs">
                 <option disabled selected>Select User</option>
                 <?php foreach ($user_res as $user) { ?>
-                    <option><?= $user['Email'] ?></option>
+                    <option value="<?= $user['Id'] ?>"><?= $user['Email'] ?></option>
                 <?php } ?>
             </select>
 
-            <select class="select select-bordered w-full max-w-xs">
+            <select name="role_id" class="select select-bordered w-full max-w-xs">
                 <option disabled selected>Select role</option>
                     <option value="1">Super Admin</option>
                     <option value="2">Admin</option>
@@ -61,6 +71,8 @@
             </select>
             <button type="submit" class="btn btn-active">Submit Here</button>
         </div>
+       </form>
+       <?php }?>
     </div>
 
     <?php require 'footer.php' ?>
