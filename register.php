@@ -17,9 +17,19 @@
 
 
 
+  <div class="card card-body">
+
   <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content flex-col lg:flex-row-reverse">
-      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div class="card card-body">
+      <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-bold">Register now!</h1>
+      <p class="py-6">
+       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit, esse deleniti ratione quis magni molestias nobis facilis adipisci obcaecati debitis.
+      </p>
+    </div>
+      </div>
+      <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-4">
 
         <form method="post" action="register_post.php" class="card-body">
 
@@ -124,6 +134,7 @@
   </div>
 
 
+  </div>
 </body>
 
 </html>

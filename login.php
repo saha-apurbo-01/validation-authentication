@@ -12,40 +12,52 @@
 </head>
 
 <body>
-    <div class="hero bg-base-200 min-h-screen">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                <form method="post" action="login_post.php" class="card-body">
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Email</span>
-                        </label>
-                        <input type="email" name="email" placeholder="email" class="input input-bordered"  />
+    <div class="card card-body">
+        <div class="hero bg-base-200 min-h-screen">
+            <div class="hero-content flex-col lg:flex-row-reverse">
+                <div class="card card-body">
+                    <div class="text-center lg:text-left">
+                        <h1 class="text-5xl font-bold">Login now!</h1>
+                        <p class="py-6">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error ex qui ipsa debitis. Praesentium dolor nihil minima exercitationem? Qui, doloribus.
+                        </p>
                     </div>
+                </div>
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl p-6">
+                    <form method="post" action="login_post.php" class="card-body">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="email" name="email" placeholder="email" class="input input-bordered" />
+                        </div>
 
 
-                    <?php if(isset($_SESSION['email_err'])) {?>
-                        <strong><?= $_SESSION['email_err']  ?></strong>
-                        <?php } unset($_SESSION['email_err'])?>
+                        <?php if (isset($_SESSION['email_err'])) { ?>
+                            <strong><?= $_SESSION['email_err']  ?></strong>
+                        <?php }
+                        unset($_SESSION['email_err']) ?>
 
 
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text">Password</span>
-                        </label>
-                        <input type="password" name="password" placeholder="password" class="input input-bordered"  />
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Password</span>
+                            </label>
+                            <input type="password" name="password" placeholder="password" class="input input-bordered" />
 
 
-                        <?php if(isset($_SESSION['pass_err'])) {?>
-                        <strong><?= $_SESSION['pass_err']?></strong>
-                        <?php } unset($_SESSION['pass_err'])?>
+                            <?php if (isset($_SESSION['pass_err'])) { ?>
+                                <strong><?= $_SESSION['pass_err'] ?></strong>
+                            <?php }
+                            unset($_SESSION['pass_err']) ?>
 
-                        
-                    </div>
-                    <div class="form-control mt-6">
-                        <button class="btn btn-primary">Login</button>
-                    </div>
-                </form>
+
+                        </div>
+                        <div class="form-control mt-6">
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

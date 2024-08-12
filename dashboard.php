@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,26 +11,46 @@
 
 <body class="">
 
-    <?php require 'header.php'?>
+    <?php require 'header.php' ?>
 
-    <div class="card mt-2">
-        <div class="card-body ">
-            <h1 class="bg-slate-300 font-blod text-xl p-2 rounded">Welcome to admin panel</h1>
+    <div class="flex">
+        <div class="flex flex-col card card-body bg-slate-300 mt-2 ">
+            <div class="mx-8">
+                <a href="dashboard.php" class="flex justify-center items-center p-2 link link-hover">Dashboard</a>
+            </div>
+
+
+            <div class="mx-8">
+                <a href="users_list.php" class="flex justify-center items-center p-2 link link-hover">Users</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="#" class="flex justify-center items-center p-2 link link-hover">Plugins</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="#" class="flex justify-center items-center p-2 link link-hover">Apps</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="#" class="flex justify-center items-center p-2 link link-hover">Charts</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="#" class="flex justify-center items-center p-2 link link-hover">Deleveries</a>
+            </div>
         </div>
+        <div class="card card-body w-full">
+            <div class="card-body ">
+                <h1 class="bg-slate-300 font-blod text-xl p-2 rounded">Welcome to admin panel</h1>
+                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam ea sequi eligendi ratione necessitatibus et recusandae veritatis iure optio fugiat? Praesentium deleniti iure earum quam accusamus. Consequuntur quas adipisci, ducimus ipsam sed vero esse eligendi quam saepe quasi dicta eaque veniam odio inventore accusamus autem tenetur tempore consectetur aperiam. A ex laborum autem omnis odio ad tenetur sint molestias eos beatae aut in, nostrum cupiditate dolorum recusandae veritatis nesciunt tempore. Ab, accusantium consequuntur? Delectus a alias earum provident, eius quibusdam? Amet ducimus eveniet doloribus velit quaerat, excepturi fugiat, neque aliquid itaque officiis corporis ullam, expedita laboriosam blanditiis. Labore, nulla repellendus!</h1>
+               
+            </div>
+            
+            </div>
     </div>
-   <div class="flex flex-col ">
-     
-   <div class="h-10 w-20 mx-8 rounded-lg bg-green-400 mb-2">
-        <a href="dashboard.php" class="flex justify-center items-center p-2 link link-hover">Dashboard</a>
-    </div>
-
-     
-    <div class="h-10 w-16 mx-8 rounded-lg bg-green-400">
-        <a href="users_list.php" class="flex justify-center items-center p-2 link link-hover">Users</a>
-    </div>
-   </div>
     <?php require 'footer.php' ?>
-    
 </body>
 
 </html>
+
