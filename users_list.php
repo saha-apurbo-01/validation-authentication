@@ -31,7 +31,7 @@
             </div>
 
             <div class="mx-8">
-                <a href="#" class="flex justify-center items-center p-2 link link-hover">Plugins</a>
+                <a href="#" class="flex justify-center items-center p-2 link link-hover">Logos</a>
             </div>
 
             <div class="mx-8">

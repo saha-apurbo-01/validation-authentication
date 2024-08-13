@@ -1,3 +1,4 @@
+<?php require 'header.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +12,7 @@
 
 <body class="">
 
-  <?php require 'header.php' ?>
+  
   <div class="flex flex-row  mx-10">
     <!-- profile info -->
     <div class="card bg-base-100 w-96 shadow-xl m-4">
@@ -48,7 +49,7 @@
           </div>
         </div>
         <div class="form-control mt-1">
-          <button class="btn btn-neutral">Update</button>
+          <button class="btn btn-neutral w-20">Update</button>
       </form>
     </div>
   </div>
@@ -107,7 +108,7 @@
       unset($_SESSION['conpass_err']) ?>
 
       <div class="form-control mt-1">
-        <button class="btn btn-neutral">Update</button>
+        <button class="btn btn-neutral w-20">Update</button>
       </div>
     </form>
   </div>
@@ -129,12 +130,14 @@
         <img src="/RegisterPage/uploads/<?= $after_assoc_logged['Photo'] ?>" id="blah" width="200" alt="">
       </div>
       <div class="form-control mt-1">
-        <button class="btn btn-neutral">Update</button>
+        <button class="btn btn-neutral w-20">Update</button>
     </form>
   </div>
   </div>
   </div>
-  <?php require 'footer.php' ?>
+ 
 </body>
 
 </html>
+
+<?php require 'footer.php' ?>

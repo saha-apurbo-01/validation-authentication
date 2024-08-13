@@ -12,7 +12,7 @@
 
     <footer class="footer footer-center bg-base-300 text-base-content p-4 mt-2">
         <aside>
-            <p>Copyright © All right reserved by Apurbo Saha</p>
+            <p>Copyright © All right reserved by <span class="font-bold italic">Apurbo Saha.</span></p>
         </aside>
     </footer>
 </body>
