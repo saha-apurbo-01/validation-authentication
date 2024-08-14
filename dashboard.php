@@ -29,7 +29,7 @@
             </div>
 
             <div class="mx-8">
-                <a href="#" class="flex justify-center items-center p-2 link link-hover">Apps</a>
+                <a href="about.php" class="flex justify-center items-center p-2 link link-hover">About</a>
             </div>
 
             <div class="mx-8">

@@ -4,6 +4,10 @@ require 'db.php';
 $logo = "SELECT * FROM logos";
 $logo_query = mysqli_query($db_connection, $logo);
 $after_assoc_logo = mysqli_fetch_assoc($logo_query);
+
+$select_data = "SELECT * FROM abouts";
+$data_query = mysqli_query($db_connection, $select_data);
+$after_assoc_data = mysqli_fetch_assoc($data_query);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +52,7 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 <nav class="navbar navbar-expand-lg bg-transprent py-4 fixed-top navigation" id="navbar">
 	<div class="container">
 	  <a class="navbar-brand" href="index.html">
-	  	<img src="logos/<?= $after_assoc_logo['Header'] ?>" alt="" width="120">
+	  	<img src="logos/<?= $after_assoc_logo['Header'] ?>" alt="" width="50">
 	  </a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="ti-view-list"></span>
@@ -83,11 +87,16 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 			</div>
 
 			<div class="col-lg-6 col-12 col-md-7">
+
+				<?php 
+				$after_assoc = explode(' ', $after_assoc_data['Name']);
+				$last = end($after_assoc);
+				?>
 				<div class="ml-5 position-relative mt-5 mt-lg-0">
-					<span class="head-trans">Stephen</span>
-					<h1 class="font-weight-normal text-color text-md"><i class="ti-minus mr-2"></i>Theme Developer</h1>
-					<h2 class="mt-3 text-lg mb-3 text-capitalize">William Stephen.</h2>
-					<p class="animated fadeInUp lead mt-4 mb-5 text-white-50 lh-35">I work in the sweet spot for innovation, somewhere between strategy, design and technology.I love the Web and the work we do.</p>
+					<span class="head-trans"><?= $last ?></span>
+					<h1 class="font-weight-normal text-color text-md"><i class="ti-minus mr-2"></i><?= $after_assoc_data['Designation'] ?></h1>
+					<h2 class="mt-3 text-lg mb-3 text-capitalize"><?= $after_assoc_data['Name'] ?></h2>
+					<p class="animated fadeInUp lead mt-4 mb-5 text-white-50 lh-35"><?= $after_assoc_data['Description'] ?></p>
 					<a href="#about" class="btn btn-solid-border">About Me</a>
 				</div>
 			</div>
@@ -454,7 +463,7 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 	<div class="container">
 		<div class="row align-items-center text-center text-lg-left">
 			<div class="col-lg-2">
-			<img src="logos/<?= $after_assoc_logo['Footer'] ?>" alt="" width="120">
+			<img src="logos/<?= $after_assoc_logo['Footer'] ?>" alt="" width="50">
 			</div>
 			<div class="col-lg-10">
 				<div class="text-right">
