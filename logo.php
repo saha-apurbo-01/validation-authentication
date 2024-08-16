@@ -48,10 +48,13 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
                 <a href="#" class="flex justify-center items-center p-2 link link-hover">Deleveries</a>
             </div>
         </div>
+        <div class="card card-body w-full">
+            <div class="card-body ">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form action="logo_update.php" enctype="multipart/form-data" method="post">
-            <div class="card card-body w-full shadow-xl">
+            <div class="card card-body shadow-xl">
 
-                <h1 class="card-title bg-gray-400 rounded p-2 w-60">Upload your logo here</h1>
+                <h1 class="card-title bg-gray-400 rounded p-2 ">Upload your logo here</h1>
                 <h1 class=" text-xl p-2">Header Logo</h1>
                 <input type="file" name="header_logo" class="file-input file-input-bordered w-full max-w-xs" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" />
                 <img src="/RegisterPage/logos/<?= $after_assoc_logo['Header'] ?>" id="blah" class="w-52" alt="">
@@ -60,11 +63,16 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 
             </div>
         </form>
-
+                </div>
+            </div>
+        </div>
+        <div class="card card-body w-full">
+            <div class="card-body ">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form action="logo_update.php" enctype="multipart/form-data"  method="post">
-            <div class="card card-body w-full shadow-xl">
+            <div class="card card-body shadow-xl">
 
-                <h1 class="card-title bg-gray-400 rounded p-2 w-60">Upload your logo here</h1>
+                <h1 class="card-title bg-gray-400 rounded p-2">Upload your logo here</h1>
                 <h1 class=" text-xl p-2">Footer Logo</h1>
                 <input type="file" name="footer_logo" class="file-input file-input-bordered w-full max-w-xs" onchange="document.getElementById('blah1').src = window.URL.createObjectURL(this.files[0])"/>
                 <img src="/RegisterPage/logos/<?= $after_assoc_logo['Footer'] ?>" id="blah1" class="w-52" alt="">
@@ -73,6 +81,9 @@ $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 
             </div>
         </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

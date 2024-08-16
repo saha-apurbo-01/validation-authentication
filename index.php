@@ -1,13 +1,18 @@
 <?php 
 require 'db.php';
-
+// logo section
 $logo = "SELECT * FROM logos";
 $logo_query = mysqli_query($db_connection, $logo);
 $after_assoc_logo = mysqli_fetch_assoc($logo_query);
 
+// about section
 $select_data = "SELECT * FROM abouts";
 $data_query = mysqli_query($db_connection, $select_data);
 $after_assoc_data = mysqli_fetch_assoc($data_query);
+
+// skill section
+$skill = "SELECT * FROM skills WHERE Status= 1";
+$skill_res =  mysqli_query($db_connection, $skill);
 ?>
 
 <!DOCTYPE html>
@@ -82,7 +87,7 @@ $after_assoc_data = mysqli_fetch_assoc($data_query);
 		<div class="row align-items-center">
 			<div class="col-lg-5 col-sm-12 col-12 col-md-5">
 				<div class="slider-img position-relative">
-					<img src="images/about/9.jpg" alt="" class="img-fluid w-100">
+					<img src="images/about/apurbo.jpg" alt="" class="img-fluid w-100">
 				</div>
 			</div>
 
@@ -117,67 +122,18 @@ $after_assoc_data = mysqli_fetch_assoc($data_query);
 			</div>
 		</div>
 		<div class="row">
+			<?php foreach($skill_res as $skills) {?>
 			<div class="col-lg-6 col-md-6">
 				<div class="skill-bar mb-4 mb-lg-0">
-					<div class="mb-4 text-right"><h4 class="font-weight-normal">Html</h4></div>
+					<div class="mb-4 text-right"><h4 class="font-weight-normal"><?= $skills['Name'] ?></h4></div>
 					<div class="progress">
-						<div class="progress-bar" data-percent="95">
-							<span class="percent-text"><span class="count">95</span>%</span>
+						<div class="progress-bar" data-percent="<?= $skills['Parcentage'] ?>">
+							<span class="percent-text"><span class="count"><?= $skills['Parcentage'] ?></span>%</span>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-6">
-				<div class="skill-bar mb-4 mb-lg-0">
-					<div class="mb-4 text-right"><h4 class="font-weight-normal">CSS</h4></div>
-					<div class="progress">
-						<div class="progress-bar" data-percent="85">
-							<span class="percent-text"><span class="count">85</span>%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-6 col-md-6">
-				<div class="skill-bar mb-4 mb-lg-0">
-					<div class="mb-4 text-right"><h4 class="font-weight-normal">Javascript</h4></div>
-					<div class="progress">
-						<div class="progress-bar" data-percent="70">
-							<span class="percent-text"><span class="count">70</span>%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6">
-				<div class="skill-bar mb-4 mb-lg-0">
-					<div class="mb-4 text-right"><h4 class="font-weight-normal">Bootstrap</h4></div>
-					<div class="progress">
-						<div class="progress-bar" data-percent="85">
-							<span class="percent-text"><span class="count">85</span>%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6">
-				<div class="skill-bar mb-4 mb-lg-0">
-					<div class=" mb-4 text-right"><h4 class="font-weight-normal">Tailwind CSS</h4></div>
-					<div class="progress">
-						<div class="progress-bar" data-percent="75">
-							<span class="percent-text"><span class="count">75</span>%</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-6 col-md-6">
-				<div class="skill-bar mb-4 mb-lg-0">
-					<div class=" mb-4 text-right"><h4 class="font-weight-normal">React JS</h4></div>
-					<div class="progress">
-						<div class="progress-bar" data-percent="65">
-							<span class="percent-text"><span class="count">65</span>%</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>	

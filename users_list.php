@@ -51,15 +51,15 @@
 
 <div class="card card-body w-2/3">
 
-    <table class="bg-slate-200">
+    <table class="bg-slate-200 table">
         <tr class="font-bold bg-slate-300">
-            <td class="p-4">Id</td>
-            <td class="p-4">Email</td>
-            <td class="p-4">Postion</td>
-            <td class="p-4">Country</td>
-            <td class="p-4">Gender</td>
+            <th class="p-4">Id</th>
+            <th class="p-4">Email</th>
+            <th class="p-4">Postion</th>
+            <th class="p-4">Country</th>
+            <th class="p-4">Gender</th>
             <?php if($after_assoc_logged['Role'] == 1){?>
-            <td class="p-2">Action</td>
+            <th class="p-2">Action</th>
             <?php }?>
         </tr>
 

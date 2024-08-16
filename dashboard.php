@@ -33,7 +33,7 @@
             </div>
 
             <div class="mx-8">
-                <a href="#" class="flex justify-center items-center p-2 link link-hover">Charts</a>
+                <a href="skill.php" class="flex justify-center items-center p-2 link link-hover">Skills</a>
             </div>
 
             <div class="mx-8">
