@@ -55,23 +55,47 @@ $after_assoc_data = mysqli_fetch_assoc($data_query);
                             <label class="label">
                                 <span class="label-text">Designation</span>
                             </label>
-                            <input type="text" name="designation" placeholder="Designation" class="input input-bordered" value="<?= $after_assoc_data['Designation'] ?>"/>
+                            <input type="text" name="designation" placeholder="Designation" class="input input-bordered" value="<?= $after_assoc_data['Designation'] ?>" />
                         </div>
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="Name" class="input input-bordered" value="<?= $after_assoc_data['Name'] ?>"/>
-                            
+                            <input type="text" name="name" placeholder="Name" class="input input-bordered" value="<?= $after_assoc_data['Name'] ?>" />
+
                         </div>
 
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text">Description</span>
                             </label>
-                            <textarea name="description" id="" placeholder="Description"  class="input input-bordered"><?= $after_assoc_data['Description'] ?></textarea>
-                            
+                            <textarea name="description" id="" placeholder="Description" class="input input-bordered"><?= $after_assoc_data['Description'] ?></textarea>
+
                         </div>
+                        <div class="form-control mt-6">
+                            <button class="btn btn-neutral w-20">Update</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card card-body w-full">
+            <div class="card-body ">
+                <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body" action="about_image_update.php" method="post" enctype="multipart/form-data">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Change Image</span>
+                            </label>
+                            <input type="file" name="image" class="file-input file-input-bordered w-full max-w-xs" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" />
+                        </div>
+                        <div class="mt-2">
+                            <img src="/RegisterPage/uploads/<?= $after_assoc_data['Image'] ?>" id="blah" width="200" alt="">
+                        </div>
+
                         <div class="form-control mt-6">
                             <button class="btn btn-neutral w-20">Update</button>
                         </div>

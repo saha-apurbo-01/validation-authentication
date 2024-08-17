@@ -37,7 +37,7 @@
             </div>
 
             <div class="mx-8">
-                <a href="#" class="flex justify-center items-center p-2 link link-hover">Deleveries</a>
+                <a href="service.php" class="flex justify-center items-center p-2 link link-hover">Services</a>
             </div>
         </div>
         <div class="card card-body w-full">
