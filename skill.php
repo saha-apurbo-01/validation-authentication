@@ -99,8 +99,11 @@ $skill_res =  mysqli_query($db_connection, $skill);
                         <td><?= $index+1 ?></td>
                         <td><?= $skills['Name'] ?></td>
                         <td><?= $skills['Parcentage'] ?></td>
+
                         <td><a class="badge badge-<?=($skills['Status'] == 1 ? 'success': 'error') ?>" href="status.php?id=<?= $skills['Id'] ?>"><?=($skills['Status'] == 1 ? 'Active': 'Deactive') ?></a></td>
+
                         <td><a href="delete_skill.php?id=<?= $skills['Id'] ?>" title="Delete skill"><i class="fa-solid fa-delete-left"></i></a></td>
+                        
                         <td><a href="edit.php?id=<?= $skills['Id'] ?>" title="Edit skill"><i class="fa-regular fa-pen-to-square"></i></a></td>
                     </tr>
                     <?php } ?>
