@@ -16,6 +16,10 @@ $skill_res =  mysqli_query($db_connection, $skill);
 
 $service = "SELECT * FROM services WHERE Status= 1";
 $service_res = mysqli_query($db_connection, $service);
+
+
+$portfolio = "SELECT * FROM portfolios WHERE Status= 1";
+$port_res = mysqli_query($db_connection, $portfolio);
 ?>
 
 
@@ -196,84 +200,21 @@ $service_res = mysqli_query($db_connection, $service);
 	<div class="container-fluid">
 		<div class="row">
 			<div class="post_gallery owl-carousel owl-theme">
+				<?php foreach($port_res as $ports) {?>
 				<div class="item">
 					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/3.jpg" alt="" class="img-fluid">
+						<img src="uploads/<?= $ports['Image'] ?>" alt="" class="img-fluid">
 
 						<div class="portoflio-item-overlay">
 							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
 						</div>
 					</div>
 					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
+						<h4 class="mb-1 text-capitalize"><?= $ports['Title'] ?></h4>
+						<p class="text-uppercase letter-spacing text-sm"><?= $ports['Catagory'] ?></p>
 					</div>
 				</div>
-				<div class="item">
-					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/4.jpg" alt="" class="img-fluid">
-
-						<div class="portoflio-item-overlay">
-							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
-						</div>
-					</div>
-					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/5.jpg" alt="" class="img-fluid">
-
-						<div class="portoflio-item-overlay">
-							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
-						</div>
-					</div>
-					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/6.jpg" alt="" class="img-fluid">
-
-						<div class="portoflio-item-overlay">
-							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
-						</div>
-					</div>
-					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/1.jpg" alt="" class="img-fluid">
-
-						<div class="portoflio-item-overlay">
-							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
-						</div>
-					</div>
-					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
-					</div>
-				</div>
-				<div class="item">
-					<div class="portfolio-item position-relative">
-						<img src="images/portfolio/2.jpg" alt="" class="img-fluid">
-
-						<div class="portoflio-item-overlay">
-							<a href="portfolio-single.html"><i class="ti-plus"></i></a>
-						</div>
-					</div>
-					<div class="text mt-3">
-						<h4 class="mb-1 text-capitalize">Web development</h4>
-						<p class="text-uppercase letter-spacing text-sm">wordpress</p>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

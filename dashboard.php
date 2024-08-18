@@ -1,3 +1,5 @@
+<?php require 'header.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +13,7 @@
 
 <body class="">
 
-    <?php require 'header.php' ?>
+    
 
     <div class="flex">
         <div class="flex flex-col card card-body bg-slate-300 mt-2 ">
@@ -53,8 +55,10 @@
             
             </div>
     </div>
-    <?php require 'footer.php' ?>
+    
 </body>
 
 </html>
+
+<?php require 'footer.php' ?>
 

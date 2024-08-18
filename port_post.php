@@ -12,8 +12,7 @@ $allowed = array('png', 'jpg');
 
 if(in_array($extension, $allowed)){
     if($image['size'] <= 1000000){
-        // $delete_from= "uploads/" .$after_assoc['Image'];
-        // unlink($delete_from);
+        
 
         $file_name = uniqid().'.'.$extension;
         $new_location = "uploads/".$file_name;
