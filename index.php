@@ -20,6 +20,9 @@ $service_res = mysqli_query($db_connection, $service);
 
 $portfolio = "SELECT * FROM portfolios WHERE Status= 1";
 $port_res = mysqli_query($db_connection, $portfolio);
+
+$feeds = "SELECT * FROM feedbacks";
+$feeds_res = mysqli_query($db_connection, $feeds);
 ?>
 
 
@@ -236,54 +239,70 @@ $port_res = mysqli_query($db_connection, $portfolio);
 		<div class="row justify-content-center">
 			<div class="col-lg-10">
 				<div class="testimonial-slider">
+				<?php foreach($feeds_res as $feeds) {?>
 					<div class="testimonial-item position-relative">
 						<i class="ti-quote-left text-white-50"></i>
 						<div class="testimonial-content">
-							<p class="text-md mt-3">They do this through collaboration between our strategists, designers and technologists.They craft beautiful and unique digital experiences.Unlimited power and customization possibilities.Pixel perfect design & clear code delivered to you.</p>
+							<p class="text-md mt-3"><?= $feeds['Feedback'] ?> </p>
 
 							<div class="media mt-5 align-items-center">
-								<img src="images/about/2.jpg" alt="" class="img-fluid  rounded-circle align-self-center mr-4">
+								<img src="uploads/<?= $feeds['Image'] ?>" alt="" class="img-fluid  rounded-circle align-self-center mr-4">
 								<div class="media-body">
-									<h3 class="mb-0">John Smith</h3>
-									<span class="text-muted">Creative Designer</span>
+									<h3 class="mb-0"><?= $feeds['Name'] ?></h3>
+									<span class="text-muted"><?= $feeds['Designation'] ?></span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="testimonial-item position-relative">
-						<i class="ti-quote-left text-white-50"></i>
-						<div class="testimonial-content">
-							<p class="text-md mt-3">They do this through collaboration between our strategists, designers and technologists.They craft beautiful and unique digital experiences.Unlimited power and customization possibilities.Pixel perfect design & clear code delivered to you.</p>
-
-							<div class="media mt-5 align-items-center">
-								<img src="images/about/3.jpg" alt="" class="img-fluid  rounded-circle align-self-center mr-4">
-								<div class="media-body">
-									<h3 class="mb-0">Smith Austin</h3>
-									<span class="text-muted">Developer</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="testimonial-item position-relative">
-						<i class="ti-quote-left text-white-50"></i>
-						<div class="testimonial-content">
-							<p class="text-md mt-3">They do this through collaboration between our strategists, designers and technologists.They craft beautiful and unique digital experiences.Unlimited power and customization possibilities.Pixel perfect design & clear code delivered to you.</p>
-
-							<div class="media mt-5 align-items-center">
-								<img src="images/about/3.jpg" alt="" class="img-fluid  rounded-circle align-self-center mr-4">
-								<div class="media-body">
-									<h3 class="mb-0">Mike jack</h3>
-									<span class="text-muted">Marketer</span>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php } ?>
 				</div>
+				
 			</div>	
 		</div>
 	</div>
 </section>
 <!-- Tetsimonial End -->
+
+
+<!-- Feedback start -->
+<section class="section" id="feedback" data-aos="fade-up">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+				<div class="section-title text-center">
+					<span class="text-color mb-0 text-uppercase letter-spacing text-sm"> <i class="ti-minus mr-2"></i>Feedback</span>
+					<h1 class="title">Give Your Feedback</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-lg-8">
+					<form class="contact__form form-row contact-form" method="post" action="feedback_post.php" enctype="multipart/form-data">
+					<div class="form-group col-lg-6 mb-5">
+						<input type="text" id="name" name="name" class="form-control bg-transparent" placeholder="Your Name">
+					</div>
+					<div class="form-group col-lg-6 mb-5">
+						<input type="text" name="designation" class="form-control bg-transparent" placeholder="Your Designation">
+					</div>
+					<div class="form-group col-lg-12 mb-5">
+						<input type="file" name="image" class="form-control bg-transparent" placeholder="Your Image">
+					</div>
+					
+					<div class="form-group col-lg-12 mb-5">
+						<textarea name="feedback" cols="30" rows="6" class="form-control bg-transparent" placeholder="Your Feedback"></textarea>
+						
+						<div class="text-center">
+							 <input class="btn btn-main text-white mt-5" id="submit" name="submit" type="submit" class="btn btn-hero" value="Send Feedback">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Feedback End -->
+
 
 <!-- Contact start -->
 <section class="section" id="contact" data-aos="fade-up">
@@ -299,14 +318,7 @@ $port_res = mysqli_query($db_connection, $portfolio);
 
 		<div class="row justify-content-center">
 			<div class="col-lg-8">
-					<form class="contact__form form-row contact-form" method="post" action="http://themeturn.com/tf-db/ratsaan/mail.php" id="contactForm">
-					 <div class="row">
-                        <div class="col-12">
-                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
-                                Your message was sent successfully.
-                            </div>
-                        </div>
-                    </div>
+					<form class="contact__form form-row contact-form" method="post" action="contact_post.php">
 					<div class="form-group col-lg-6 mb-5">
 						<input type="text" id="name" name="name" class="form-control bg-transparent" placeholder="Your Name">
 					</div>

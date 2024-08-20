@@ -9,11 +9,8 @@ $select = "SELECT * FROM users WHERE id = $id";
 $select_res = mysqli_query($db_connection, $select);
 $after_assoc = mysqli_fetch_assoc($select_res);
 
-print_r($photo) ;
 $after_explode = explode('.', $photo['name']);
-
 $extension = end($after_explode);
-
 $allowed_extension = array('jpg', 'JPG', 'PNG', 'png');
 if (in_array($extension, $allowed_extension)) {
     if ($photo['size'] <= 1000000) {
