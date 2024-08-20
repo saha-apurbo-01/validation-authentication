@@ -20,7 +20,7 @@ $after_assoc = mysqli_fetch_assoc($select_res);
 
 <body>
     <div class="flex">
-        <div class="flex flex-col card card-body bg-slate-300 mt-2 ">
+    <div class="flex flex-col card card-body bg-slate-300 mt-2 ">
             <div class="mx-8">
                 <a href="dashboard.php" class="flex justify-center items-center p-2 link link-hover">Dashboard</a>
             </div>
@@ -47,7 +47,15 @@ $after_assoc = mysqli_fetch_assoc($select_res);
             </div>
 
             <div class="mx-8">
-                <a href="portfolio.php" class="flex justify-center items-center p-2 link link-hover">Portfolio</a>
+                <a href="portfolio.php" class="flex justify-center items-center p-2 link link-hover">Portfolios</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="feedback_list.php" class="flex justify-center items-center p-2 link link-hover">Feedbacks</a>
+            </div>
+
+            <div class="mx-8">
+                <a href="contact_list.php" class="flex justify-center items-center p-2 link link-hover">Contacts</a>
             </div>
         </div>
         <div class="card card-body w-full">

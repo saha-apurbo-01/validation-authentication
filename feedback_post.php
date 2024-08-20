@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'db.php';
 
 $name = $_POST['name'];
@@ -17,6 +18,7 @@ if (in_array($extension, $allowed_extension)) {
         move_uploaded_file($image['tmp_name'], $new_location);
         $insert = "INSERT INTO feedbacks(Name, Designation, Image, Feedback) VALUES ('$name','$designation','$file_name','$feedback')";
         mysqli_query($db_connection, $insert);
+        $_SESSION['success'] = "Your feedback sent successfully!!";
         header('location: index.php#feedback');
     } else {
         $_SESSION['err'] = "File size Max 1 MB";
